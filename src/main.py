@@ -23,7 +23,7 @@ for result in results:
     print(name)
 
     # Save the dentist's data in a CSV file
-    with open("dentists.csv", "w", encoding='utf-8') as file:
+    with open("dentists.csv", "a", encoding='utf-8') as file:
         writer = csv.writer(file)
         writer.writerow([name])
 
