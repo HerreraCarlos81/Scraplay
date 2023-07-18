@@ -16,15 +16,22 @@ driver.get("https://www.google.com/search?q=dentists+near+me")
 results = driver.find_elements(by=By.CLASS_NAME,value="dbg0pd")
 
 # Iterate over the search results
+# Add a list to receive all names of the dentists
+names = []
+
 for result in results:
 
     # Get the dentist's name
-    name = result.text
-    print(name)
+    names.append(result.text)
 
-    # Save the dentist's data in a CSV file
-    with open("dentists.csv", "a", encoding='utf-8') as file:
-        writer = csv.writer(file)
+# Save the dentist's data in a CSV file
+with open("dentists.csv", "w", encoding='utf-8',newline='') as file:
+    writer = csv.writer(file)
+
+    # Write the header and dentists name in the CSV file
+    writer.writerow(["Dentist's Name"])
+    for name in names:
+        print(f"Writing {name} to the CSV file")
         writer.writerow([name])
 
 driver.save_screenshot('images/screenshot.png')
