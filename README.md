@@ -1,39 +1,49 @@
-# Dentist Web Scraper
+# Automated Coupon Submission Tool
 
-This project is a simple web scraping tool that fetches information about nearby dentists from Google search results and stores the information in a CSV file and a picture of the search.
+This Python script automates the process of submitting a coupon on the website [wethrift.com](https://www.wethrift.com/). The code uses Selenium WebDriver with Chrome and the `undetected_chromedriver` library. It takes screenshots at every step of the process and saves them in the `./images/` directory.
 
-## Features
+## Dependencies
 
-- Fetches search results for "dentists near me" from Google.
-- Retrieves the name of each dentist from the search results.
-- Saves the dentist's names in a CSV file.
-- Saves a screenshot of the browser at the end of the process.
-
-## Requirements
-
-The script requires the following Python libraries:
+The code uses the following Python libraries:
 
 - `selenium`
+- `undetected_chromedriver`
 - `csv`
+- `os`
+- `sys`
+- `time`
+- `random`
 
-## Usage
+You can install these with pip:
+pip install selenium undetected_chromedriver
 
-1. Install the required Python libraries using pip:
+(Note: The libraries `csv`, `os`, `sys`, `time`, and `random` are part of Python's standard library and do not need to be installed.)
 
-    ```bash
-    pip install selenium
-    ```
+## Chrome WebDriver
 
-2. Download the appropriate ChromeDriver for your version of Chrome browser from the [ChromeDriver download page](https://sites.google.com/a/chromium.org/chromedriver/downloads) and place it in the `src/assets/` directory.
+You need to have the Chrome WebDriver installed and available on your system path. You can download it from the [ChromeDriver download page](https://sites.google.com/a/chromium.org/chromedriver/downloads).
 
-3. Run the script with Python:
+## Running the Script
 
-    ```bash
-    python main.py
-    ```
-    
-The script will automatically fetch the dentist information and save it in a file named `dentists.csv` in the same directory as the script. The script will also save a screenshot named `screenshot.png`.
+To run the script, simply navigate to the directory containing the script and run the following command:
 
-## Note
+Replace "your_script_name.py" with the name of your Python script.
 
-Please ensure that you use this script responsibly and respect Google's terms of service.
+The script will open the [wethrift.com](https://www.wethrift.com/) website, find a specific coupon, submit a random amount for the savings, and then take a screenshot of the result.
+
+## Screenshots
+
+The process screenshots are saved in the `./images/` directory. The script takes a screenshot at every step of the process, from opening the website to submitting the coupon.
+
+## Notification
+
+The script checks if the final coupon is available on the webpage and if so, it has a placeholder to add code for notifying success. If not, it has a placeholder to add code for notifying failure.
+
+## Support
+
+If you have any issues or questions, please open a new issue on this GitHub repository.
+
+
+
+
+
